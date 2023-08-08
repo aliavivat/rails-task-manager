@@ -1,5 +1,23 @@
 <div class="container col-6 col-md-4">
   <h1><%= @task.title.capitalize %></h1>
-  <p><%= @task.details.capitalize %></p>
-  <p><%= link_to 'Back to the list', tasks_path, class: 'btn btn-light' %></p>
+
+<div class="card">
+  <div class="card-body">
+    <%= @task.details.capitalize %>
+  </div>
+</div>
+
+  <div class="alert alert-primary" role="alert">
+    <% if @task.completed == false %>
+      <%= 'This task is not completed yet' %>
+    <% else %>
+      <%= 'Task is completed' %>
+    <% end %>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= link_to 'Update the task', edit_task_path, class: 'btn btn-outline-success' %>
+    <%= link_to 'Delete the task', task_path(@task), class: 'btn btn-outline-danger', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }  %>
+    <%= link_to 'Back to the list', tasks_path, class: 'btn btn-outline-primary' %>
+  </div>
 </div>

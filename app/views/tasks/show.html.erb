@@ -1,0 +1,5 @@
+<div class="container col-6 col-md-4">
+  <h1><%= @task.title.capitalize %></h1>
+  <p><%= @task.details.capitalize %></p>
+  <p><%= link_to 'Back to the list', tasks_path, class: 'btn btn-light' %></p>
+</div>

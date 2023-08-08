@@ -1,0 +1,12 @@
+<div class="container col-6 col-md-4">
+  <h1>Tasks</h1>
+  <ul class="list-group ">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item">
+        <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+        <label class="form-check-label" for="firstCheckbox"><h4><%= link_to task.title, tasks_path(task), class: 'btn btn-light'%></h4>
+        </label>
+      </li>
+    <% end %>
+</ul>
+</div>
